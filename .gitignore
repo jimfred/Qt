@@ -1,0 +1,96 @@
+# C++ objects and libs
+*.o
+*.a
+*.so
+*.dll
+*.dylib
+*.exe
+*.out
+*.app
+
+# Qt-specific
+*.pro.user
+*.pro.user.*
+*.qmlc
+*.jsc
+*.qm
+.qmake.cache
+.qmake.stash
+*.qmlproject.user
+*.qmlproject.user.*
+
+# Qt Creator
+*.autosave
+*.user
+*.user.*
+CMakeLists.txt.user*
+
+# MOC/UIC/RCC generated files
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+*_automoc.cpp
+*_autogen/
+
+# Build directories
+build/
+build-*/
+debug/
+release/
+Debug/
+Release/
+*/build/
+*/build-*/
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+CTestTestfile.cmake
+_deps/
+*.cmake
+!CMakeLists.txt
+
+# IDE specific
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Windows specific
+Thumbs.db
+Desktop.ini
+
+# Compiled translation files
+*.qm
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Distribution / packaging
+dist/
+*.egg-info/
+
+# Qt Designer backup files
+*.ui~
+
+# Temporary files
+*.tmp
+*.temp
+
+# Generated documentation
+doc/html/
+doc/latex/
+
+# Installer logs and metadata
+*.log
+*.dat
+*.ini
+components.xml
+network.xml
