@@ -1,0 +1,15 @@
+{
+    "targets": {
+        "esp32counter": {
+            "includeDirectories": [
+                "src",
+                "src/freertos"
+            ],
+            "sources": [
+                { "files": "src/freertos/countercontrol.cpp" },
+                { "files": "src/freertos/counter_threads.cpp" },
+                { "files": "src/idf/main.cpp" }
+            ]
+        }
+    }
+}

@@ -1,0 +1,50 @@
+# ESP32 Counter - Git Ignore File
+
+# Build directories
+build/
+*.bin
+*.elf
+*.map
+
+# Qt Creator
+*.user
+*.user.*
+*.autosave
+
+# Qt MCU generated files
+*.qmlc
+*.jsc
+
+# ESP-IDF specific
+sdkconfig
+sdkconfig.old
+dependencies.lock
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS specific
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+*.cache

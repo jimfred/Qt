@@ -1,4 +1,10 @@
-# Qt Multi-Threaded Counter Demo
+# Qt Projects Sandbox
+
+This directory contains Qt demonstration projects for desktop and embedded platforms.
+
+## Projects
+
+### JimFirstQtWidgetApp
 
 A Qt Widgets application demonstrating multi-threading, signal/slot communication, and thread-safe UI updates.
 
@@ -87,3 +93,87 @@ cmake --build .
 ## License
 
 This is a learning/demonstration project.
+
+---
+
+### ESP32CounterGHCP
+
+A Qt for MCUs application for ESP32-S3-BOX-3 featuring dual independent counters with touch controls.
+
+```
+┌────────────────────────────────────┐
+│      ESP32 Dual Counter            │
+├────────────────────────────────────┤
+│                                    │
+│  ┌─────────────────────────────┐   │
+│  │ Counter 1:    [O]───[O]     │   │  ← Toggle switch
+│  │         0                   │   │  ← Counter display (green when active)
+│  └─────────────────────────────┘   │
+│                                    │
+│  ┌─────────────────────────────┐   │
+│  │ Counter 2:    [O]───[O]     │   │  ← Toggle switch
+│  │         0                   │   │  ← Counter display (blue when active)
+│  └─────────────────────────────┘   │
+│                                    │
+│  Toggle switches to start/stop     │
+│           counters                 │
+└────────────────────────────────────┘
+     ESP32-S3-BOX-3 (320x240)
+```
+
+#### Features
+
+- **Embedded Platform**: Runs on ESP32-S3-BOX-3 MCU with 320x240 touchscreen
+- **Qt for MCUs**: Lightweight Qt framework optimized for microcontrollers
+- **FreeRTOS**: Two independent counter tasks managed by FreeRTOS
+- **Touch Interface**: QML-based UI with touch-activated switches
+- **Real-time Updates**: Event queue system for thread-safe UI updates
+- **Low Resource**: Designed for memory-constrained embedded systems
+
+#### Architecture
+
+- **UI Framework**: Qt for MCUs 2.11.1 with QML
+- **RTOS**: FreeRTOS (provided by ESP-IDF v5.5.1)
+- **MCU**: ESP32-S3 (Xtensa LX7 dual-core, 240MHz)
+- **Display**: 320x240 touchscreen LCD
+- **Build System**: CMake with ESP-IDF integration
+
+#### Key Differences from Desktop Version
+
+| Aspect       | Desktop (JimFirstQtWidgetApp) | Embedded (ESP32CounterGHCP) |
+| ------------ | ----------------------------- | --------------------------- |
+| UI Framework | Qt Widgets                    | Qt for MCUs (QML)           |
+| Threading    | QThread                       | FreeRTOS tasks              |
+| Platform     | Windows/Linux/Mac             | ESP32-S3 MCU                |
+| Resources    | GB RAM, GHz CPU               | 512KB RAM, 240MHz CPU       |
+| Display      | Variable resolution           | Fixed 320x240 touchscreen   |
+| Controls     | Mouse/Keyboard                | Touchscreen only            |
+
+#### Building
+
+**Automated Command-Line Build** ✅
+
+```powershell
+cd ESP32CounterGHCP
+.\build.ps1           # Build firmware
+.\build.ps1 -Flash    # Build and flash to device
+```
+
+The build script automatically:
+
+- Loads ESP-IDF v5.5.1 environment
+- Exports QML to C++ code
+- Downloads 12 managed components
+- Compiles and generates flashable firmware
+- Zero manual configuration required!
+
+**Requirements:**
+
+- Qt for MCUs 2.11.1
+- ESP-IDF v5.5.1  
+- Python 3.12
+- Xtensa GCC toolchain (included with ESP-IDF)
+
+**Status:** ✅ **Fully working** - generates `esp32counter.bin` ready to flash
+
+See `ESP32CounterGHCP/README.md` for detailed documentation and troubleshooting.
