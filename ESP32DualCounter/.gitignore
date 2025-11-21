@@ -1,0 +1,46 @@
+# Build directories
+build/
+build*/
+dist/
+
+# ESP-IDF specific
+sdkconfig
+sdkconfig.old
+.config
+.config.old
+
+# Qt for MCUs build artifacts
+*.qmlc
+*.jsc
+.qmlcache/
+
+# IDE files
+.vscode/
+.idea/
+*.user
+*.suo
+*.sdf
+*.opensdf
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Log files
+*.log
+build-log.txt
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+env/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~

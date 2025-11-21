@@ -1,0 +1,9 @@
+import QmlProject 1.3
+
+Project {
+    mainFile: "counter.qml"
+
+    InterfaceFiles {
+        files: ["src/countercontrol.h"]
+    }
+}
