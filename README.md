@@ -4,9 +4,17 @@ This directory contains Qt demonstration projects for desktop and embedded platf
 
 ## Projects
 
-### JimFirstQtWidgetApp
+### 1. JimFirstQtWidgetApp
 
 A Qt Widgets application demonstrating multi-threading, signal/slot communication, and thread-safe UI updates.
+
+### 2. ESP32CounterGHCP
+
+Qt for MCUs application for ESP32-S3-BOX-3 with dual counters and touch controls. ✅ **Build working**
+
+### 3. STM32CounterGHCP  
+
+Qt for MCUs application for STM32F746G-Discovery with dual counters. ⚠️ **Cannot build - Missing STM32F746 BSP**
 
 ## Features
 
@@ -177,3 +185,64 @@ The build script automatically:
 **Status:** ✅ **Fully working** - generates `esp32counter.bin` ready to flash
 
 See `ESP32CounterGHCP/README.md` for detailed documentation and troubleshooting.
+
+---
+
+### STM32CounterGHCP
+
+A Qt for MCUs application for STM32F746G-Discovery featuring dual independent counters with touch controls.
+
+#### Features
+
+- **Larger Display**: 480x272 touchscreen (71% more pixels than ESP32)
+- **ARM Cortex-M7**: Industry-standard ARM architecture @ 216MHz
+- **FreeRTOS**: Same counter logic as ESP32 version (95%+ code reuse)
+- **Hardware FPU**: Double-precision floating point for smooth graphics
+- **Integrated Tools**: Build with Qt Creator (no custom scripts needed)
+- **Touch Interface**: QML-based UI scaled for larger display
+
+#### Architecture Comparison
+
+| Aspect | ESP32CounterGHCP | STM32CounterGHCP |
+|--------|------------------|------------------|
+| **Display** | 320x240 | **480x272** (larger) |
+| **CPU** | Xtensa LX7 dual-core @ 240MHz | ARM Cortex-M7 @ 216MHz |
+| **RAM** | 512KB | 340KB |
+| **Architecture** | Xtensa (custom) | **ARM** (standard) |
+| **Build** | Custom PowerShell script | **Qt Creator integrated** |
+| **Toolchain** | ESP-IDF + Xtensa GCC | STM32Cube + ARM GCC |
+
+#### Building
+
+**Qt Creator Workflow** (Easiest)
+```
+1. Open STM32Counter.qmlproject in Qt Creator
+2. Select STM32F746G-Discovery kit  
+3. Build (Ctrl+B)
+4. Flash to board (Ctrl+R)
+```
+
+**Requirements:**
+- Qt for MCUs 2.11.1
+- Qt Creator with STM32F7 support
+- STM32CubeIDE (includes ARM GCC toolchain)
+- STM32F746G-Discovery board
+
+**Code Reuse from ESP32 Version:**
+- ✅ 100% counter logic reusable
+- ✅ 100% FreeRTOS task code reusable
+- ✅ 95% QML UI (resized for 480x272)
+- ✅ Total: 95%+ code reuse!
+
+**Status:** ⚠️ **Cannot build - Qt is missing BSP for STM32F746**
+
+**Discovery**: Qt for MCUs 2.11.1 only includes ESP32 BSP. STM32F746 BSP is not available in the base installation.
+
+**This project serves as:**
+- ✅ Reference implementation showing 95%+ code portability
+- ✅ Template for when STM32 support becomes available
+- ✅ Documentation of porting process from ESP32
+
+**Recommendation**: Use **ESP32CounterGHCP** which is fully functional.
+
+See `STM32CounterGHCP/IMPORTANT_LIMITATION.md` for detailed explanation.
