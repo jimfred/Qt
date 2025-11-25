@@ -8,11 +8,11 @@ This directory contains Qt demonstration projects for desktop and embedded platf
 
 A Qt Widgets application demonstrating multi-threading, signal/slot communication, and thread-safe UI updates.
 
-![DesktopDualCounter](C:\Users\jimfr\sandbox\qt\DesktopDualCounter.gif)
+![DesktopDualCounter](./DesktopDualCounter.gif)
 
 ### 2. ESP32DualCounter
 
-![ESP32DualCounter](C:\Users\jimfr\sandbox\qt\ESP32DualCounter.gif)
+![ESP32DualCounter](./ESP32DualCounter.gif)
 
 ## Features
 
